@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123e37">
+  <meta name="description" content="Explore the real Wisconsin breast cancer experiment, inspect predictions, and understand how categorical Naive Bayes works.">
+  <title>Bayes Lab · Experiment dashboard</title>
+  <meta property="og:title" content="Bayes Lab · Experiment dashboard">
+  <meta property="og:description" content="Explore the original experiment.">
+  <meta property="og:locale" content="en_US"><meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23123e37'/%3E%3Ctext x='11' y='29' font-size='27' fill='white'%3Eβ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../../assets/project-navigation.css">
+  <link rel="stylesheet" href="integration.css">
+  <script type="module" src="integration.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<aside class="sidebar">
+  <a href="#overview" class="brand"><span class="brand-icon">β</span><span>Bayes<span class="font-normal"> Lab</span><small>EXPERIMENT EXPLORER</small></span></a>
+  <p class="nav-label">WORKSPACE</p>
+  <nav aria-label="Main navigation">
+    <a href="#overview" class="nav-link active"><span aria-hidden="true">▦</span> Overview</a>
+    <a href="#workbench" class="nav-link"><span aria-hidden="true">⤨</span> Prediction lab</a>
+    <a href="#results" class="nav-link"><span aria-hidden="true">☷</span> Test results</a>
+    <a href="#quality" class="nav-link"><span aria-hidden="true">◇</span> Data & methodology</a>
+  </nav>
+  <div class="sidebar-note"><span class="live-dot"></span> Local experiment<p>Wisconsin breast cancer<br>Original MATLAB project</p><span class="tag">Categorical Naive Bayes</span></div>
+  <div class="sidebar-footer"><span class="avatar">NB</span><div>Research workspace<small>Educational analysis</small></div></div>
+</aside>
+<div class="workspace">
+  <div class="portfolio-toolbar">
+    <div class="project-actions">
+      <a href="../../#projects" class="portfolio-back"><span aria-hidden="true">←</span> <span data-i18n="project.back">Back to portfolio</span></a>
+      <a href="https://github.com/IssamJim/NaiveBayes-BreastCancer" target="_blank" rel="noopener noreferrer" aria-label="View the code on GitHub (opens in a new tab)" data-i18n-aria="project.githubLabel"><span data-i18n="project.github">View the code on GitHub</span> <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="portfolio-languages" role="group" aria-label="Select language" data-i18n-aria="language.label"><button type="button" data-language="es" aria-pressed="false" aria-label="Leer en español" data-i18n-aria="language.es">ES</button><button type="button" data-language="en" aria-pressed="true" aria-label="Read in English" data-i18n-aria="language.en">EN</button></div>
+  </div>
+  <header class="topbar"><div>Workspace <span class="mx-2 text-slate-300">/</span> <strong>Experiment overview</strong></div><span class="snapshot"><span class="live-dot"></span> Saved experiment</span></header>
+  <main id="main" tabindex="-1">
+    <section id="overview" class="intro"><div><p class="eyebrow">FROM FEATURES TO FINDINGS</p><h1>Small model. Clear insights.</h1><p class="intro-copy">Explore how nine cell characteristics become a prediction.</p></div><a class="button button-white" href="#workbench">Explore a prediction <span aria-hidden="true">↗</span></a></section>
+    <div id="load-status" class="state-card" role="status"><span class="spinner"></span> Loading the saved experiment…</div>
+    <noscript><div class="state-card">Enable JavaScript to explore the experiment and calculate predictions.</div></noscript>
+    <div id="dashboard" hidden>
+      <div class="metrics" id="metrics"></div>
+      <div class="quality-strip"><span class="notice-icon" aria-hidden="true">!</span><p><strong>A strong result, with a caveat.</strong> Training and testing share <b id="shared-count">—</b> sample IDs. These results are from one fixed split.</p><a href="#quality">Review data quality <span aria-hidden="true">↗</span></a></div>
+      <section id="workbench" class="section-space">
+        <div class="section-heading"><div><p class="eyebrow">LOOK INSIDE THE MODEL</p><h2>Prediction lab</h2></div><span class="tag tag-white">Interactive · runs on your device</span></div>
+        <div class="workbench card">
+          <div class="pipeline" aria-label="Prediction process"><span><b>01</b> Cell characteristics</span><span aria-hidden="true">→</span><span><b>02</b> Class likelihoods × prior</span><span aria-hidden="true">→</span><span><b>03</b> Predicted class</span></div>
+          <div class="lab-grid">
+            <div class="input-panel"><div class="flex items-center justify-between gap-3"><h3>Start with a real sample</h3><button id="reset" class="text-button" type="button">Reset inputs ↺</button></div>
+              <label for="sample" class="sr-only">Test sample</label><select id="sample" class="sample-select"></select>
+              <div class="input-meta"><span id="input-kind" class="tag">Real test sample</span><span id="actual-label"></span></div>
+              <div id="sliders" class="sliders"></div>
+              <p class="small-note">Feature scores range from 1 to 10. Adjust a value to explore a hypothetical sample.</p>
+            </div>
+            <div class="prediction-panel" id="prediction" aria-live="polite" aria-atomic="true"></div>
+          </div>
+          <details class="evidence"><summary>What is driving this prediction? <span>Inspect feature contributions</span></summary><p>Each bar shows the log likelihood ratio for one feature. Left favors benign; right favors malignant. The class prior also contributes to the final score.</p><div id="evidence-chart"></div><p id="prior-note" class="small-note"></p></details>
+        </div>
+      </section>
+      <section id="results" class="section-space">
+        <div class="section-heading"><div><p class="eyebrow">THE HELD-OUT RESULTS</p><h2>Every prediction, accounted for.</h2></div><button id="export" class="button button-white" type="button">↓ Export results</button></div>
+        <div class="results-grid">
+          <div class="card matrix-card"><div class="flex justify-between items-center"><h3>Prediction breakdown</h3><span class="tag">Test set</span></div><p class="small-note">Actual class → predicted class</p><div id="matrix"></div><div id="extra-metrics" class="extra-metrics"></div><p class="small-note">Malignant is the positive class throughout this dashboard.</p></div>
+          <div class="card explorer"><div class="explorer-heading"><h3>Test samples <span id="result-count" class="count-badge"></span></h3><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search sample ID…" aria-label="Search test samples by ID"></label></div>
+            <div class="filters"><div class="filter-group" role="group" aria-label="Filter results"><button class="filter active" data-filter="all" aria-pressed="true">All samples</button><button class="filter" data-filter="errors" aria-pressed="false">Misclassified</button><button class="filter" data-filter="overlap" aria-pressed="false">Shared IDs</button></div><label class="sr-only" for="class-filter">Filter by actual class</label><select id="class-filter"><option value="all">All actual classes</option><option value="2">Benign</option><option value="4">Malignant</option></select></div>
+            <div class="table-scroll" role="region" aria-label="Test samples" tabindex="0"><table class="samples-table"><thead><tr><th scope="col">Sample ID</th><th scope="col">Actual</th><th scope="col">Prediction</th><th scope="col">Result</th><th scope="col"><span class="sr-only">Explore sample</span></th></tr></thead><tbody id="rows"></tbody></table></div>
+            <div id="empty-results" class="empty-state" hidden><strong>No matching samples</strong><p>Try another ID or clear your filters.</p><button id="clear-filters" class="text-button">Clear filters</button></div>
+            <div class="pagination"><span id="page-info" role="status"></span><div><button id="previous" class="page-button" aria-label="Previous page">←</button><button id="next" class="page-button" aria-label="Next page">→</button></div></div>
+          </div>
+        </div>
+      </section>
+      <section id="quality" class="section-space"><div class="section-heading"><div><p class="eyebrow">CONTEXT BEHIND THE NUMBERS</p><h2>Data & methodology</h2></div><span class="tag tag-white">Source-backed · no demonstration metrics</span></div>
+        <div class="quality-grid">
+          <article class="card quality-card"><div class="card-label"><span class="mini-icon">▤</span><h3>A fixed experiment</h3></div><div id="dataset-split"></div><p>Nine integer features, scored 1–10. Sample IDs and actual labels are excluded from prediction. No missing feature values in the supplied matrices.</p><div class="source-box"><span>SOURCE DATA</span><code>CasosTrainTestWisconsin.mat</code><span>VERIFIED AGAINST</span><code>Clasificador.mat</code></div></article>
+          <article class="card quality-card warning-card"><div class="card-label"><span class="mini-icon">!</span><h3>Check independence first</h3></div><p class="quality-number"><span id="overlap-number"></span> <span>shared sample IDs</span></p><p><strong id="duplicate-number"></strong> identical full rows appear in both partitions. Overlap can make evaluation optimistic; repeated IDs also need review.</p><div class="next-step"><b>Recommended next step</b><p>Deduplicate records, split by sample ID, then reevaluate before comparing models.</p></div></article>
+          <article class="card quality-card"><div class="card-label"><span class="mini-icon">ƒ</span><h3>Know what this measures</h3></div><ul class="method-list"><li><b>Categorical Naive Bayes</b><span>Frequency tables with Laplace smoothing (α = 1).</span></li><li><b>One supplied train/test split</b><span>No repeated runs or external validation are included.</span></li><li><b>Explicit class convention</b><span>The original script uses benign as positive. Here, malignant is positive.</span></li></ul><p class="small-note">This is an educational experiment, not a validated diagnostic tool. Model support is not a calibrated clinical risk estimate.</p></article>
+        </div>
+      </section>
+      <footer class="page-footer"><span><b>Bayes Lab</b> · Wisconsin breast cancer experiment</span><span>Original MATLAB analysis · Local, reproducible exploration</span></footer>
+    </div>
+  </main>
+</div>
+<div id="language-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

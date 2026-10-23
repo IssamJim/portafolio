@@ -1,0 +1,12 @@
+.powerbi-embed { position:relative; width:100%; padding-bottom:56px; overflow:hidden; border:1px solid #d9ddcf; border-radius:6px; background:#eceee5; }
+.powerbi-embed::before { content:""; display:block; aspect-ratio:16 / 9; }
+.powerbi-embed iframe { position:absolute; inset:0; display:block; width:100%; height:100%; border:0; background:#fff; }
+.embed-placeholder { position:absolute; inset:0; z-index:1; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:18px; padding:24px; text-align:center; background:#eceee5; color:#53594b; font-size:14px; line-height:1.7; }
+.embed-glyph { display:flex; align-items:flex-end; gap:5px; height:38px; }
+.embed-glyph > span { display:block; width:10px; background:#788469; border-radius:2px; }
+.embed-glyph > span:nth-child(1) { height:18px; }
+.embed-glyph > span:nth-child(2) { height:28px; }
+.embed-glyph > span:nth-child(3) { height:38px; }
+.embed-fallback { display:inline-flex; align-items:center; gap:10px; min-height:44px; padding-block:10px; margin-top:8px; font-size:13px; text-decoration:underline; }
+.embed-fallback:hover { color:#a64024; }
+.embed-feedback { margin-top:14px; color:#606458; font-size:13px; line-height:1.8; }

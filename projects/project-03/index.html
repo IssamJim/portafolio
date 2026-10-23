@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f5f0">
+<title>Mapa interactivo: parques, volcanes y población | Issam Jiménez</title>
+<meta name="description" content="Mapa interactivo con parques, volcanes y población POP2005.">
+
+<meta property="og:title" content="Mapa interactivo: parques, volcanes y población | Issam Jiménez">
+<meta property="og:description" content="Mapa interactivo con parques, volcanes y población POP2005.">
+<meta property="og:locale" content="es_MX"><meta property="og:type" content="website">
+<link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/styles.css">
+<link rel="stylesheet" href="../../assets/project-navigation.css">
+<link rel="stylesheet" href="../../assets/project-detail.css">
+<link rel="stylesheet" href="integration.css">
+<script type="module" src="integration.js"></script>
+</head>
+<body id="top" class="project-page">
+<a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+<header class="site-header"><div class="container header-inner">
+<a class="brand" href="../../"><span class="brand-mark" aria-hidden="true">ij<span>.</span></span><span>Issam Jiménez<span class="brand-sub" data-i18n="brand.portfolio">Portafolio</span></span></a>
+<div class="language-control" role="group" aria-label="Seleccionar idioma" data-i18n-aria="language.label"><button type="button" data-language="es" aria-pressed="true" aria-label="Leer en español" data-i18n-aria="language.es">ES</button><button type="button" data-language="en" aria-pressed="false" aria-label="Read in English" data-i18n-aria="language.en">EN</button></div>
+</div></header>
+<main id="main" class="container project-detail map-page-main" tabindex="-1">
+  <div class="map-page-links project-actions"><a href="../../#projects"><span aria-hidden="true">←</span> <span data-i18n="project.back">Volver al portafolio</span></a><a href="https://github.com/IssamJim/Practica-Mapa" target="_blank" rel="noopener noreferrer" aria-label="Código y datos en GitHub (abre en otra pestaña)" data-i18n-aria="map.sourceLabel" data-i18n="map.source">Código y datos en GitHub ↗</a></div>
+  <header class="project-intro">
+    <p class="eyebrow accent" data-i18n="map.details.eyebrow">Proyecto 03 / Visualización geográfica</p>
+    <h1 data-i18n="projects.name3">Mapa interactivo: parques, volcanes y población</h1>
+    <p class="map-description project-lead" data-i18n="projects.description3">Explora parques de Hermosillo, volcanes de Estados Unidos y una capa mundial de población mediante un mapa interactivo creado con Python y Folium.</p>
+    <nav class="section-navigation" aria-label="Secciones del proyecto" data-i18n-aria="map.details.navigation">
+      <a href="#map-explore"><span aria-hidden="true">A</span><span  data-i18n="map.details.mapNav">Explorar el mapa</span></a>
+      <a href="#map-guide"><span aria-hidden="true">B</span><span  data-i18n="map.details.guideNav">Cómo leer el mapa</span></a>
+      <a href="#map-method"><span aria-hidden="true">C</span><span  data-i18n="map.details.methodNav">Sobre el proyecto</span></a>
+    </nav>
+  </header>
+  <section id="map-explore" class="project-section" aria-labelledby="map-title">
+    <header class="project-section-heading">
+      <h2 id="map-title" data-i18n="map.details.mapTitle">Explora el mapa</h2>
+      <p class="map-note" data-i18n="map.note">La capa de población utiliza POP2005 (2005), no datos actuales. Activa o desactiva las capas desde el control del mapa. El mapa base requiere conexión a Internet.</p>
+    </header>
+    <iframe id="project-map" src="map/" title="Mapa interactivo: parques, volcanes y población" allowfullscreen></iframe>
+    <noscript><p>Activa JavaScript para utilizar el mapa. / Enable JavaScript to use the map.</p></noscript>
+  </section>
+  <section id="map-guide" class="project-section case-study" aria-labelledby="guide-title">
+    <header class="project-section-heading"><h2 id="guide-title" data-i18n="map.details.guideTitle">Cómo leer el mapa</h2><p  data-i18n="map.details.guideIntro">Los colores se reutilizan entre capas y tienen un significado diferente en cada una. No expresan una valoración de calidad.</p></header>
+    <div class="legend-grid"><article class="legend-card"><h3  data-i18n="map.details.parksTitle">Parques de Hermosillo</h3><p  data-i18n="map.details.parksText">Cada círculo representa un registro de parque o plaza. Al seleccionarlo se muestran su nombre, dirección y superficie. El color indica superficie.</p><dl class="legend-ranges"><div><dt><span class="legend-swatch legend-green " aria-hidden="true"></span><span  data-i18n="map.details.green">Verde</span></dt><dd  data-i18n="map.details.parksLow">Menos de 960 m²</dd></div><div><dt><span class="legend-swatch legend-orange " aria-hidden="true"></span><span  data-i18n="map.details.orange">Naranja</span></dt><dd  data-i18n="map.details.parksMid">Desde 960 hasta menos de 3 350 m²</dd></div><div><dt><span class="legend-swatch legend-red " aria-hidden="true"></span><span  data-i18n="map.details.red">Rojo</span></dt><dd  data-i18n="map.details.parksHigh">3 350 m² o más</dd></div></dl></article><article class="legend-card"><h3  data-i18n="map.details.volcanoesTitle">Volcanes</h3><p  data-i18n="map.details.volcanoesText">Los círculos representan volcanes de Estados Unidos. Su ventana de información muestra la altura. Estos colores clasifican la altura; no indican actividad ni riesgo volcánico.</p><dl class="legend-ranges"><div><dt><span class="legend-swatch legend-green " aria-hidden="true"></span><span  data-i18n="map.details.green">Verde</span></dt><dd  data-i18n="map.details.volcanoesLow">Menos de 960 m</dd></div><div><dt><span class="legend-swatch legend-orange " aria-hidden="true"></span><span  data-i18n="map.details.orange">Naranja</span></dt><dd  data-i18n="map.details.volcanoesMid">Desde 960 hasta menos de 3 350 m</dd></div><div><dt><span class="legend-swatch legend-red " aria-hidden="true"></span><span  data-i18n="map.details.red">Rojo</span></dt><dd  data-i18n="map.details.volcanoesHigh">3 350 m o más</dd></div></dl></article><article class="legend-card"><h3  data-i18n="map.details.populationTitle">Población · POP2005</h3><p  data-i18n="map.details.populationText">Las zonas coloreadas representan las geometrías de países y territorios del archivo GeoJSON. El color corresponde al valor de población registrado para 2005. Es población total, no densidad.</p><dl class="legend-ranges"><div><dt><span class="legend-swatch legend-green legend-zone" aria-hidden="true"></span><span  data-i18n="map.details.green">Verde</span></dt><dd  data-i18n="map.details.populationLow">Menos de 10 millones</dd></div><div><dt><span class="legend-swatch legend-orange legend-zone" aria-hidden="true"></span><span  data-i18n="map.details.orange">Naranja</span></dt><dd  data-i18n="map.details.populationMid">Desde 10 hasta menos de 20 millones</dd></div><div><dt><span class="legend-swatch legend-red legend-zone" aria-hidden="true"></span><span  data-i18n="map.details.red">Rojo</span></dt><dd  data-i18n="map.details.populationHigh">20 millones o más</dd></div></dl><p class="project-note" data-i18n="map.details.populationNote">El archivo contiene valores cero que no deben interpretarse como ausencia de habitantes.</p></article></div>
+    <section class="case-process" aria-labelledby="controls-title">
+      <h3 id="controls-title" data-i18n="map.details.controlsTitle">Controles y símbolos</h3>
+      <ul class="map-explanation-list"><li  data-i18n="map.details.layersHelp">Capas: activa o desactiva parques, volcanes y población. Desactivar población permite ver con mayor claridad el mapa base y los puntos.</li><li  data-i18n="map.details.zoomHelp">+ / −: acerca o aleja la vista; arrastra el mapa para desplazarte.</li><li  data-i18n="map.details.sizeHelp">Los marcadores tienen el mismo radio: su tamaño no representa superficie ni altura.</li><li  data-i18n="map.details.keyboardHelp">Selecciona un círculo para consultar sus datos. Con teclado, usa Tab para enfocar un marcador y Enter o Espacio para abrirlo; Escape cierra la información.</li></ul>
+    </section>
+  </section>
+  <section id="map-method" class="project-section case-study" aria-labelledby="method-title">
+    <header class="project-section-heading"><h2 id="method-title" data-i18n="map.details.methodTitle">Sobre el proyecto</h2></header>
+    <div class="case-grid">
+      <section class="case-panel" aria-labelledby="objective-title"><h3 id="objective-title" data-i18n="map.details.objectiveTitle">Objetivo</h3><p  data-i18n="map.details.objective">Reunir datos de parques, volcanes y población en un mapa por capas para consultar su ubicación y atributos, y comparar las categorías definidas en el proyecto.</p></section>
+      <section class="case-panel" aria-labelledby="tools-title"><h3 id="tools-title" data-i18n="map.details.toolsTitle">Tecnologías y herramientas</h3><ul class="map-explanation-list"><li  data-i18n="map.details.python">Python y pandas: lectura de los datos de parques en Excel y de volcanes en CSV.</li><li  data-i18n="map.details.folium">Folium: creación de las capas, los marcadores y el archivo HTML del mapa.</li><li  data-i18n="map.details.geojson">GeoJSON: geometrías y atributos de la capa mundial de población.</li><li  data-i18n="map.details.leaflet">Leaflet: navegación, controles de capas y ventanas de información en el navegador.</li><li  data-i18n="map.details.osm">OpenStreetMap: mapa base y atribución de sus colaboradores.</li></ul></section>
+    </div>
+    <section class="case-process" aria-labelledby="process-title"><h3 id="process-title" data-i18n="map.details.processTitle">Cómo funciona</h3><ol class="process-list map-process"><li><span class="process-number" aria-hidden="true">01</span><div><h4  data-i18n="map.details.step1Title">Leer los datos</h4><p  data-i18n="map.details.step1">Leer las coordenadas y atributos de los archivos de origen.</p></div></li><li><span class="process-number" aria-hidden="true">02</span><div><h4  data-i18n="map.details.step2Title">Organizar las capas</h4><p  data-i18n="map.details.step2">Asignar colores mediante umbrales y organizar los elementos en tres capas independientes.</p></div></li><li><span class="process-number" aria-hidden="true">03</span><div><h4  data-i18n="map.details.step3Title">Explorar en el navegador</h4><p  data-i18n="map.details.step3">Exportar el mapa a HTML para explorar las capas y consultar los atributos de cada marcador en el navegador.</p></div></li></ol></section>
+    <section class="case-code" aria-labelledby="code-title">
+      <h3 id="code-title" data-i18n="map.details.codeTitle">La clasificación, en código</h3><p  data-i18n="map.details.codeIntro">Función original de map1.py. Se utiliza tanto para la superficie de los parques como para la altura de los volcanes, aunque son magnitudes y unidades distintas.</p>
+      <pre class="code-block" tabindex="0" role="region" aria-label="Función Python de clasificación por colores; desplazamiento horizontal disponible" data-i18n-aria="map.details.codeLabel"><code class="language-python">def color_producer(superficie):
+    if superficie &lt; 960:
+        return &#x27;green&#x27;
+    elif 960 &lt;= superficie &lt; 3350:
+        return &#x27;orange&#x27;
+    else:
+        return &#x27;red&#x27;</code></pre>
+    </section>
+    <section class="case-results" aria-labelledby="results-title">
+      <h3 id="results-title" data-i18n="map.details.resultsTitle">Resultados y aprendizajes</h3>
+      <dl class="result-grid"><div><dt  data-i18n="map.details.parksCount">Registros de parques</dt><dd><strong>832</strong></dd></div><div><dt  data-i18n="map.details.volcanoesCount">Volcanes</dt><dd><strong>62</strong></dd></div><div><dt  data-i18n="map.details.populationCount">Elementos geográficos</dt><dd><strong>246</strong></dd></div></dl>
+      <p class="project-note" data-i18n="map.details.countsNote">Son recuentos de registros, no una garantía de lugares únicos ni de cobertura completa.</p><p class="map-learning" data-i18n="map.details.learning">El proyecto muestra cómo combinar datos tabulares y geográficos en una visualización por capas. La interpretación exige identificar la unidad de cada variable, explicar los umbrales y conservar la fecha del conjunto de datos.</p><p class="project-note" data-i18n="map.details.limits">Se mantienen las coordenadas, atributos y categorías originales. No se han actualizado ni verificado de nuevo su exactitud geográfica o su vigencia.</p>
+    </section>
+  </section>
+</main>
+<footer class="container site-footer"><div><a class="footer-name" href="../../">Issam Jiménez<span class="accent">.</span></a><p data-i18n="footer.tagline">Tecnología con sentido humano.</p></div><p class="copyright">© 2026 Issam Silverio Jiménez Ortega.<br><span data-i18n="footer.rights">Todos los derechos reservados.</span></p></footer>
+<div id="language-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body></html>

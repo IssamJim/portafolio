@@ -1,0 +1,5 @@
+/* Shared navigation for project pages, independent of their main stylesheets. */
+.project-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 30px; font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; font-size:13px; line-height:1.5; }
+.project-actions a { color:#252722; text-decoration:underline; text-underline-offset:4px; padding:8px 0; }
+.project-actions a:hover { color:#a64024; }
+.project-actions a:focus-visible { outline:3px solid #a64024; outline-offset:5px; }
