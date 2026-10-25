@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f5f0">
-  <title>Power BI y Power Query | Issam Jiménez</title>
-  <meta name="description" content="Dashboard interactivo de videojuegos en Power BI y caso de estudio de preparación de ventas con Excel y Power Query.">
-  <meta property="og:title" content="Power BI y Power Query | Issam Jiménez">
-  <meta property="og:description" content="Dashboard interactivo de videojuegos en Power BI y caso de estudio de preparación de ventas con Excel y Power Query.">
+  <title>Dashboard de videojuegos en Power BI | Issam Jiménez</title>
+  <meta name="description" content="Dashboard interactivo en Power BI para explorar las ventas de videojuegos por región, año, plataforma y género.">
+  <meta property="og:title" content="Dashboard de videojuegos en Power BI | Issam Jiménez">
+  <meta property="og:description" content="Dashboard interactivo en Power BI para explorar las ventas de videojuegos por región, año, plataforma y género.">
   <meta property="og:locale" content="es_MX"><meta property="og:type" content="website">
   <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/styles.css">
@@ -29,20 +29,13 @@
     </div>
     <header class="project-intro">
       <p class="eyebrow accent" data-i18n="project1.eyebrow">Proyecto 01 / Datos y análisis</p>
-      <h1 data-i18n="projects.name1">Power BI y automatización con Power Query</h1>
-      <p class="project-lead" data-i18n="project1.intro">Dos piezas de trabajo: un dashboard para explorar las ventas de videojuegos y un caso de preparación de datos de ventas con Excel y Power Query.</p>
-      <nav class="section-navigation" aria-label="Secciones del proyecto" data-i18n-aria="project1.navigation">
-        <a href="#power-bi"><span aria-hidden="true">A</span> <span data-i18n="project1.powerbi.nav">Dashboard de Power BI</span></a>
-        <a href="#power-query"><span aria-hidden="true">B</span> <span data-i18n="project1.excel.nav">Caso Excel y Power Query</span></a>
-      </nav>
+      <h1 id="project-title" data-i18n="projects.name1">Dashboard interactivo de ventas de videojuegos en Power BI</h1>
+      <p class="eyebrow accent" data-i18n="project1.powerbi.eyebrow">Análisis de videojuegos</p>
+      <p class="project-lead" data-i18n="project1.intro">Explora las ventas de videojuegos con un dashboard interactivo en Power BI. Compara regiones, años, plataformas y géneros mediante sus filtros.
+Este proyecto muestra las ventas de videojuegos por región, año, plataforma y género. Utiliza los filtros de año, región, género, editorial y plataforma para comparar segmentos y explorar su evolución.</p>
     </header>
 
-    <section id="power-bi" class="project-section" aria-labelledby="powerbi-title">
-      <header class="project-section-heading">
-        <p class="eyebrow accent" data-i18n="project1.powerbi.eyebrow">A / Análisis de videojuegos</p>
-        <h2 id="powerbi-title" data-i18n="project1.powerbi.title">Dashboard interactivo de Power BI</h2>
-        <p data-i18n="project1.powerbi.intro">Practica2(Videojuegos) muestra las ventas de videojuegos por región, año, plataforma y género. Utiliza los filtros de año, región, género, editorial y plataforma para comparar segmentos y explorar su evolución.</p>
-      </header>
+    <section id="power-bi" class="project-section" aria-labelledby="project-title">
       <div class="powerbi-embed" aria-busy="false">
         <div class="embed-placeholder" role="status">
           <span class="embed-glyph" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -55,67 +48,6 @@
       <p class="embed-feedback" role="status" hidden data-i18n="project1.powerbi.slow">El informe está tardando en responder. Puedes abrirlo en una nueva pestaña desde el enlace de abajo.</p>
       <a class="embed-fallback" href="https://app.powerbi.com/view?r=eyJrIjoiNDk3NWRlOTgtZTllMC00ODg4LTk5ODMtZmM4ZWQzMmUwMzIxIiwidCI6IjY3NTUzNjQ1LTBkYjMtNDQ4MC1iMTI3LTZmODE5YTc5ZTM2NyIsImMiOjR9" target="_blank" rel="noopener noreferrer" aria-label="Abrir Practica2(Videojuegos) en una nueva pestaña" data-i18n-aria="project1.powerbi.openLabel"><span data-i18n="project1.powerbi.open">Abrir dashboard en una nueva pestaña</span> <span aria-hidden="true">↗</span></a>
       <p class="project-note" data-i18n="project1.powerbi.languageNote">Los textos y filtros del reporte conservan el idioma configurado en Power BI.</p>
-    </section>
-
-    <section id="power-query" class="project-section case-study" aria-labelledby="excel-title">
-      <header class="project-section-heading">
-        <p class="eyebrow accent" data-i18n="project1.excel.eyebrow">B / Excel y Power Query</p>
-        <h2 id="excel-title" data-i18n="project1.excel.title">Automatización de reportes con Power Query</h2>
-        <p data-i18n="project1.excel.intro">De los registros de ventas a una tabla mensual por ciudad. Este caso muestra cómo las consultas M del repositorio seleccionan, transforman y agrupan los datos dentro de Excel.</p>
-      </header>
-      <div class="case-grid">
-        <section class="case-panel" aria-labelledby="problem-title">
-          <h3 id="problem-title" data-i18n="project1.excel.problemTitle">El problema</h3>
-          <p data-i18n="project1.excel.problem">Un resumen de ventas por mes y ciudad necesita fechas e importes con tipos consistentes. Prepararlo manualmente implica repetir la selección de columnas, el tratamiento de fechas y la agregación cada vez que cambia la tabla de origen.</p>
-        </section>
-        <section class="case-panel" aria-labelledby="solution-title">
-          <h3 id="solution-title" data-i18n="project1.excel.solutionTitle">La solución</h3>
-          <p data-i18n="project1.excel.solution">La consulta de transformación lee Demo_PQ desde el libro, promueve encabezados, define tipos y agrupa las ventas por período y ciudad. Los pasos quedan guardados en Power Query para volver a aplicarlos al actualizar la consulta.</p>
-        </section>
-      </div>
-
-      <section class="case-process" aria-labelledby="process-title">
-        <h3 id="process-title" data-i18n="project1.excel.processTitle">El proceso técnico</h3>
-        <ol class="process-list">
-          <li><span class="process-number" aria-hidden="true">01</span><div><h4 data-i18n="project1.excel.step1Title">Conectar con el libro</h4><p data-i18n="project1.excel.step1">Excel.CurrentWorkbook toma Demo_PQ como origen y Table.PromoteHeaders convierte la primera fila en encabezados.</p></div></li>
-          <li><span class="process-number" aria-hidden="true">02</span><div><h4 data-i18n="project1.excel.step2Title">Conservar los datos necesarios</h4><p data-i18n="project1.excel.step2">Tras definir los tipos de las 24 columnas, Table.SelectColumns conserva date, city y sale_dollars para el análisis.</p></div></li>
-          <li><span class="process-number" aria-hidden="true">03</span><div><h4 data-i18n="project1.excel.step3Title">Agrupar por mes y ciudad</h4><p data-i18n="project1.excel.step3">La consulta extrae año y mes, construye el período y utiliza Table.Group con List.Sum para obtener la suma de ventas de cada grupo.</p></div></li>
-          <li><span class="process-number" aria-hidden="true">04</span><div><h4 data-i18n="project1.excel.step4Title">Definir un esquema consistente</h4><p data-i18n="project1.excel.step4">Otra consulta del repositorio, AutomatizacionPQExcel.pq, lee SalesByCityMonthly y define YearMonth como fecha, City como texto y TotalSales como número.</p></div></li>
-        </ol>
-        <div class="case-source-links">
-          <a href="https://github.com/IssamJim/PortfolioLinks/blob/68d62aef92c6d22b52a5a8a1bd3b48b9efda83c8/Excel%20Automatizaci%C3%B3n%20Power%20Querypq.txt" target="_blank" rel="noopener noreferrer" aria-label="Ver la consulta de transformación en GitHub (abre en otra pestaña)" data-i18n-aria="project1.excel.transformSourceLabel"><span data-i18n="project1.excel.transformSource">Ver consulta de transformación</span> <span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/IssamJim/PortfolioLinks/blob/68d62aef92c6d22b52a5a8a1bd3b48b9efda83c8/AutomatizacionPQExcel.pq" target="_blank" rel="noopener noreferrer" aria-label="Ver la consulta de tipos en GitHub (abre en otra pestaña)" data-i18n-aria="project1.excel.typesSourceLabel"><span data-i18n="project1.excel.typesSource">Ver consulta de tipos</span> <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
-      <figure class="case-screenshot">
-        <img src="../../assets/images/project-01/power-query-source.png" width="1088" height="302" loading="lazy" decoding="async" alt="Captura de AutomatizacionPQExcel.pq en GitHub: lectura de SalesByCityMonthly y conversión de YearMonth, City y TotalSales a fecha, texto y número." data-i18n-alt="project1.excel.imageAlt">
-        <figcaption data-i18n="project1.excel.imageCaption">Captura real de la consulta original en GitHub. El código también está disponible como texto a continuación.</figcaption>
-      </figure>
-      <section class="case-code" aria-labelledby="code-title">
-        <h3 id="code-title" data-i18n="project1.excel.codeTitle">La consulta de tipos, en código</h3>
-        <p data-i18n="project1.excel.codeIntro">Consulta completa de AutomatizacionPQExcel.pq. Lee una tabla del libro y define explícitamente el tipo de tres columnas; los identificadores originales se conservan en ambos idiomas.</p>
-        <pre class="code-block" tabindex="0" role="region" aria-label="Código M de Power Query; desplazamiento horizontal disponible" data-i18n-aria="project1.excel.codeLabel"><code class="language-powerquery">let
-    Origen = Excel.CurrentWorkbook(){[Name="SalesByCityMonthly"]}[Content],
-    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"YearMonth", type date}, {"City", type text}, {"TotalSales", type number}})
-in
-    #"Tipo cambiado"</code></pre>
-      </section>
-
-      <section class="case-results" aria-labelledby="results-title">
-        <h3 id="results-title" data-i18n="project1.excel.resultsTitle">Resultado e impacto</h3>
-        <dl class="result-grid">
-          <div><dt data-i18n="project1.excel.metric1Label">Columnas para el análisis</dt><dd><strong>24 → 3</strong><span data-i18n="project1.excel.metric1Detail">Fecha, ciudad e importe: los campos que conserva la consulta de transformación.</span></dd></div>
-          <div><dt data-i18n="project1.excel.metric2Label">Criterios de agrupación</dt><dd><strong>2</strong><span data-i18n="project1.excel.metric2Detail">Período y ciudad, con la suma de ventas calculada para cada grupo.</span></dd></div>
-          <div><dt data-i18n="project1.excel.metric3Label">Consultas documentadas</dt><dd><strong>2</strong><span data-i18n="project1.excel.metric3Detail">Transformación de registros y definición de tipos, disponibles para revisión.</span></dd></div>
-        </dl>
-        <p data-i18n="project1.excel.impact">El resultado es una secuencia de preparación reutilizable y un resumen orientado al análisis mensual. Guardar los pasos evita tener que reconstruir manualmente la transformación en cada actualización.</p>
-        <p class="project-note" data-i18n="project1.excel.measurementNote">Estas cifras describen el código publicado. El repositorio no incluye mediciones de tiempo antes y después, por lo que no se atribuye un porcentaje de ahorro.</p>
-      </section>
-      <section class="case-next" aria-labelledby="next-title">
-        <h3 id="next-title" data-i18n="project1.excel.nextTitle">Aprendizajes y próximos pasos</h3>
-        <p data-i18n="project1.excel.next">Revisar los tipos de los importes para preservar decimales, construir el período sin depender de la configuración regional y medir la preparación manual frente a la actualización de Power Query sobre el mismo conjunto de datos.</p>
-      </section>
     </section>
   </main>
   <footer class="container site-footer"><div><a class="footer-name" href="../../">Issam Jiménez<span class="accent">.</span></a><p data-i18n="footer.tagline">Tecnología con sentido humano.</p></div><p class="copyright">© 2026 Issam Silverio Jiménez Ortega.<br><span data-i18n="footer.rights">Todos los derechos reservados.</span></p></footer>
